@@ -10,7 +10,8 @@ python = "^3.12"
 dotenv = "^0.9.9"
 google-search-results = "^2.4.2"
 notebook = "^7.4.7"
-pandas = "^2.0.0"
+pandas = "^2.3.3"
+matplotlib = "^3.10.7"
 
 
 [build-system]
