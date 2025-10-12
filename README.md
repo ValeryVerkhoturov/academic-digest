@@ -14,7 +14,7 @@ A pipeline for analyzing academic papers and generating summaries based on how t
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/ValeryVerkhoturov/academic-digest
 cd academic-digest
 ```
 
@@ -38,7 +38,7 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 
 **What it does**:
 - Uses SerpAPI to search Google Scholar
-- Searches for papers referencing "Exploring ChatGPT and its impact on society MA Haque, S Li"
+- Searches for papers referencing to user query (ex. 'Exploring ChatGPT and its impact on society MA Haque, S Li')
 - Extracts paper metadata and saves results to `cites.csv`
 
 **Output**: `cites.csv` - Contains paper metadata and PDF URLs
