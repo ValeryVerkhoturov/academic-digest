@@ -33,7 +33,7 @@ echo "RWB_CORELLM_TOKEN=your_corellm_token_here" >> .env
 
 The project consists of 5 sequential notebooks that form a complete analysis pipeline:
 
-### 1. `1_get_cite_urls.ipynb` - Citation Discovery
+### 1. [1_get_cite_urls.ipynb](./1_get_cite_urls.ipynb) - Citation Discovery
 **Purpose**: Search Google Scholar for papers that cite the source article
 
 **What it does**:
@@ -43,7 +43,7 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 
 **Output**: `cites.csv` - Contains paper metadata and PDF URLs
 
-### 2. `2_fetch_pdfs.ipynb` - PDF Download
+### 2. [2_fetch_pdfs.ipynb](./2_fetch_pdfs.ipynb) - PDF Download
 **Purpose**: Download PDF files of the discovered papers
 
 **What it does**:
@@ -52,7 +52,7 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 
 **Output**: `pdfs/` folder - Contains downloaded PDF files
 
-### 3. `3_extract_pdfs.ipynb` - Text Extraction
+### 3. [3_extract_pdfs.ipynb](./3_extract_pdfs.ipynb) - Text Extraction
 **Purpose**: Extract text content from PDF files
 
 **What it does**:
@@ -61,7 +61,7 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 
 **Output**: `pdf_extracted_text.csv` - Contains extracted text content
 
-### 4. `4_llm_process_of_extraction.ipynb` - Reference Analysis
+### 4. [4_llm_process_of_extraction.ipynb](./4_llm_process_of_extraction.ipynb) - Reference Analysis
 **Purpose**: Use LLMs to find references to the source article in extracted text
 
 **What it does**:
@@ -70,7 +70,7 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 
 **Output**: `pdf_extracted_text_with_digests.csv` - Contains original text + LLM digests
 
-### 5. `5_digest_summary.ipynb` - Summary Generation
+### 5. [5_digest_summary.ipynb](./5_digest_summary.ipynb) - Summary Generation
 **Purpose**: Generate summary of the source article based on references
 
 **What it does**:
