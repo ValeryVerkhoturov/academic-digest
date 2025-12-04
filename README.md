@@ -76,3 +76,29 @@ The project consists of 5 sequential notebooks that form a complete analysis pip
 **What it does**:
 - Analyzes all valid digests from previous step
 - Generates summary of the source article with DeepSeek-R1
+
+## CLI article creation (no notebooks)
+
+You can run the complete pipeline and build an article straight from the command line with `article_creator.py`. It mirrors the notebooks but also allows combining multiple source articles into one synthesized article.
+
+```bash
+# Full pipeline for multiple sources (repeat flags):
+python article_creator.py \
+  --query "Exploring ChatGPT and its impact on society MA Haque, S Li" \
+  --query "ChatGPT in society: emerging issues M Farina, A Lavazza" \
+  --query "ChatGPT and the entangled evolution of society, education, and technology: A systems theory perspective S Watson, J Romic" \
+  --query "The impact of ChatGPT on human society ZZ Zhao " \
+  --output-dir ./outputs
+
+# Provide queries via file (one per line):
+python article_creator.py --queries-file queries.txt --output-dir ./outputs
+
+# Article only: reuse one or more existing digests CSVs
+python article_creator.py --only-article \
+  --digests-csv outputs/run_01_*/pdf_extracted_text_with_digests.csv \
+  --digests-csv outputs/run_02_*/pdf_extracted_text_with_digests.csv
+```
+
+Outputs (inside `--output-dir`):
+- Per query: `run_<n>_<slug>/cites.csv`, `pdfs/`, `pdf_extracted_text.csv`, `pdf_extracted_text_with_digests.csv`
+- Global: `article.md` – generated article synthesized from all digests
